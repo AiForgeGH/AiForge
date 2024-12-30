@@ -1,0 +1,65 @@
+
+Usage
+
+Once the installation is complete, you can start using the AIForge tools to enhance blockchain security. Below are examples and instructions for using each tool: Smart Contract Generator, Anti-Rug Bot, and Audit Tool.
+
+3.1 Smart Contract Generator
+
+The Smart Contract Generator allows users to create secure and custom smart contracts using AI, without requiring any coding skills. You simply provide the necessary parameters (such as tokenomics, name, etc.), and the AI will generate a fully functional smart contract.
+
+Example usage:
+	1.	Open your terminal and use the generate_contract command to generate a new smart contract.
+
+solana program run generate_contract --tokenomics 1000000 --name "MyToken"
+
+Parameters:
+	•	--tokenomics: The total supply of the token (e.g., 1000000).
+	•	--name: The name of the token (e.g., "MyToken").
+This command will generate a smart contract for a token with the specified tokenomics and name.
+
+	2.	After generating the contract, you can deploy it to the Solana blockchain:
+
+solana program deploy /target/deploy/mytoken_contract.so
+
+
+
+3.2 Anti-Rug Bot
+
+The Anti-Rug Bot is designed to protect users from scams and rug pulls in the DeFi space by automatically detecting suspicious behavior, such as setting excessive transaction fees or removing liquidity. If any fraudulent activity is detected, the bot will block the transaction before it happens.
+
+Example usage:
+	1.	To activate the Anti-Rug Bot, use the following command, specifying the contract address you want to monitor:
+
+solana program run anti_rug --address <contract_address> --block suspicious_tx
+
+Parameters:
+	•	--address: The address of the smart contract you want to monitor.
+	•	--block suspicious_tx: This will block transactions that are flagged as suspicious.
+
+	2.	The bot will monitor the contract for any unusual behavior, and if anything suspicious is detected, it will automatically prevent the transaction from going through.
+
+3.3 Audit Tool
+
+The Audit Tool performs automated security audits on Solana-based smart contracts. It scans the contract for vulnerabilities such as reentrancy attacks, integer overflows, and other common security flaws. The audit results will give developers and users a clear overview of the contract’s security level and any potential risks.
+
+Example usage:
+	1.	To perform an audit of a smart contract, use the audit_contract command with the address of the contract you want to inspect:
+
+solana program run audit_contract --address <contract_address>
+
+Parameters:
+	•	--address: The address of the contract to be audited.
+
+	2.	The audit will return a report outlining any vulnerabilities or risks associated with the contract, including suggestions for how to fix them.
+
+3.4 View Audit Reports and Logs
+
+After running the audit or bot, you may want to review the results. The audit and anti-rug bot tools output logs that contain detailed information about any detected issues or activities.
+	•	You can view the logs in your terminal directly after running the commands.
+	•	For more advanced users, logs can also be saved to a file for further analysis:
+
+solana program run audit_contract --address <contract_address> > audit_report.txt
+
+By following these instructions, users can easily take advantage of the AIForge tools to create secure smart contracts, monitor contracts for suspicious behavior, and audit existing smart contracts for vulnerabilities. These tools provide a seamless and automated approach to blockchain security, empowering users to take proactive steps in preventing fraud and ensuring the integrity of their projects.
+
+Let me know if you need any further adjustments!
