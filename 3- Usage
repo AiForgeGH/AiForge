@@ -59,7 +59,3 @@ After running the audit or bot, you may want to review the results. The audit an
 	•	For more advanced users, logs can also be saved to a file for further analysis:
 
 solana program run audit_contract --address <contract_address> > audit_report.txt
-
-By following these instructions, users can easily take advantage of the AIForge tools to create secure smart contracts, monitor contracts for suspicious behavior, and audit existing smart contracts for vulnerabilities. These tools provide a seamless and automated approach to blockchain security, empowering users to take proactive steps in preventing fraud and ensuring the integrity of their projects.
-
-Let me know if you need any further adjustments!
