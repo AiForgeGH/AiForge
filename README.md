@@ -1,4 +1,4 @@
-Here’s the README.md in English:
+Here’s the README.md
 
 AIForge Blockchain Security Tools
 
