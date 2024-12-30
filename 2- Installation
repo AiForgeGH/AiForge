@@ -1,1 +1,116 @@
 
+Installation
+
+Follow the steps below to install and set up AIForge tools on your system:
+
+2.1 Requirements
+
+Before you begin, make sure you have the following software installed:
+	1.	Rust:
+Rust is needed for developing Solana programs. To install it, follow the steps below:
+	•	Visit Rust’s official installation guide and follow the instructions for your operating system.
+	•	After installation, you can check if it is installed correctly by running:
+
+rustc --version
+
+
+	2.	Solana CLI:
+Solana Command Line Interface (CLI) is required to interact with the Solana blockchain. Install Solana CLI by following the official guide:
+	•	Visit Solana CLI Installation Guide for detailed instructions.
+	•	After installation, verify Solana CLI by running:
+
+solana --version
+
+
+	3.	Node.js (optional for frontend integration):
+If you’re using the frontend or the project requires running a web interface, you’ll need Node.js installed.
+	•	Install Node.js from here.
+	•	After installation, verify Node.js by running:
+
+node --version
+npm --version
+
+
+
+2.2 Install Dependencies
+
+Once you have the required software installed, follow these steps to set up the project:
+	1.	Clone the repository:
+Clone the AIForge project from GitHub to your local machine:
+
+git clone https://github.com/yourusername/AIForge
+cd AIForge
+
+
+	2.	Install Rust dependencies:
+After cloning the repository, you need to install the dependencies for the Solana program:
+	•	Navigate to the programs/ directory:
+
+cd programs
+
+
+	•	Install the Rust dependencies:
+
+cargo build-bpf
+
+
+	3.	Install Node.js dependencies (if applicable):
+If your project includes a frontend interface, navigate to the frontend directory and install necessary dependencies:
+
+cd frontend
+npm install
+
+
+
+2.3 Build and Deploy
+
+Now that you have all the dependencies set up, you can compile and deploy the program to Solana:
+	1.	Build the program:
+	•	Navigate to the programs/ directory:
+
+cd programs
+
+
+	•	Build the program in release mode:
+
+cargo build-bpf --release
+
+
+	2.	Deploy the program to Solana:
+Once the build is complete, deploy the program to the Solana network. Make sure you have a Solana wallet set up and connected to the network.
+
+solana program deploy /target/deploy/your_program.so
+
+
+
+2.4 Connect to the Solana Network
+
+To interact with the Solana blockchain, you’ll need to set the Solana CLI to point to a specific network (e.g., devnet, testnet, or mainnet):
+	1.	Set the Solana cluster:
+You can switch to the devnet or testnet for testing:
+
+solana config set --url https://api.devnet.solana.com
+
+For the mainnet:
+
+solana config set --url https://api.mainnet-beta.solana.com
+
+
+	2.	Check the connection:
+To verify your connection to the Solana network:
+
+solana cluster-version
+
+
+
+2.5 Additional Configuration
+
+If needed, you can configure wallets and deploy keys. For example, to create a new wallet:
+
+solana-keygen new --outfile ~/my-wallet.json
+
+Make sure to save your private key securely.
+
+With these steps, you’ll have AIForge up and running on your system. The tools and programs will be deployed on the Solana network, and you’ll be ready to start generating smart contracts, using the anti-rug bot, or conducting security audits.
+
+Let me know if you need further clarification or adjustments!
