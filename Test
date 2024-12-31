@@ -4,7 +4,7 @@ This directory contains example projects to demonstrate how to use the tools pro
 
 ## Examples
 
-1. **anti_rug_bot/**
+**anti_rug_bot/**
    - Demonstrates how to configure and use the Anti-Rug Bot.
    - Includes sample transactions and monitoring setup.
 
