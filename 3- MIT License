@@ -1,61 +1,18 @@
+MIT License
 
-Usage
+Copyright (c) 2024 AIForge
 
-Once the installation is complete, you can start using the AIForge tools to enhance blockchain security. Below are examples and instructions for using each tool: Smart Contract Generator, Anti-Rug Bot, and Audit Tool.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+	1.	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+	2.	The software is provided “as is”, without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
 
-3.1 Smart Contract Generator
+Explanation
 
-The Smart Contract Generator allows users to create secure and custom smart contracts using AI, without requiring any coding skills. You simply provide the necessary parameters (such as tokenomics, name, etc.), and the AI will generate a fully functional smart contract.
+This license allows anyone to use, copy, modify, and distribute the AIForge software freely. However, it requires that the copyright notice and permission be included in all copies or substantial portions of the Software. Additionally, the software is provided “as-is,” meaning there is no warranty for the software, and the authors are not liable for any damages or issues that arise from its use.
 
-Example usage:
-	1.	Open your terminal and use the generate_contract command to generate a new smart contract.
+This open-source license ensures that the project can be freely used and improved upon, while also protecting the authors from legal liability.
 
-solana program run generate_contract --tokenomics 1000000 --name "MyToken"
-
-Parameters:
-	•	--tokenomics: The total supply of the token (e.g., 1000000).
-	•	--name: The name of the token (e.g., "MyToken").
-This command will generate a smart contract for a token with the specified tokenomics and name.
-
-	2.	After generating the contract, you can deploy it to the Solana blockchain:
-
-solana program deploy /target/deploy/mytoken_contract.so
-
-
-
-3.2 Anti-Rug Bot
-
-The Anti-Rug Bot is designed to protect users from scams and rug pulls in the DeFi space by automatically detecting suspicious behavior, such as setting excessive transaction fees or removing liquidity. If any fraudulent activity is detected, the bot will block the transaction before it happens.
-
-Example usage:
-	1.	To activate the Anti-Rug Bot, use the following command, specifying the contract address you want to monitor:
-
-solana program run anti_rug --address <contract_address> --block suspicious_tx
-
-Parameters:
-	•	--address: The address of the smart contract you want to monitor.
-	•	--block suspicious_tx: This will block transactions that are flagged as suspicious.
-
-	2.	The bot will monitor the contract for any unusual behavior, and if anything suspicious is detected, it will automatically prevent the transaction from going through.
-
-3.3 Audit Tool
-
-The Audit Tool performs automated security audits on Solana-based smart contracts. It scans the contract for vulnerabilities such as reentrancy attacks, integer overflows, and other common security flaws. The audit results will give developers and users a clear overview of the contract’s security level and any potential risks.
-
-Example usage:
-	1.	To perform an audit of a smart contract, use the audit_contract command with the address of the contract you want to inspect:
-
-solana program run audit_contract --address <contract_address>
-
-Parameters:
-	•	--address: The address of the contract to be audited.
-
-	2.	The audit will return a report outlining any vulnerabilities or risks associated with the contract, including suggestions for how to fix them.
-
-3.4 View Audit Reports and Logs
-
-After running the audit or bot, you may want to review the results. The audit and anti-rug bot tools output logs that contain detailed information about any detected issues or activities.
-	•	You can view the logs in your terminal directly after running the commands.
-	•	For more advanced users, logs can also be saved to a file for further analysis:
-
-solana program run audit_contract --address <contract_address> > audit_report.txt
+License Summary
+	•	Permitted: Use, copy, modify, distribute, merge, publish, sublicense, and sell copies of the Software.
+	•	Conditions: Must include the copyright notice and permission notice in copies of the Software.
+	•	Limitation: No warranty provided. The software is “as-is.”
