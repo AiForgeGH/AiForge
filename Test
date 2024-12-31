@@ -1,19 +1,18 @@
-# Examples Directory
+use solana_program::{
+    account_info::AccountInfo,
+    entrypoint,
+    entrypoint::ProgramResult,
+    msg,
+    pubkey::Pubkey,
+};
 
-This directory contains example projects to demonstrate how to use the tools provided by AIForge.
+entrypoint!(process_instruction);
 
-## Examples
-
-**anti_rug_bot/**
-   - Demonstrates how to configure and use the Anti-Rug Bot.
-   - Includes sample transactions and monitoring setup.
-
-2. **contract_audit/**
-   - Shows how to upload and analyze a smart contract for vulnerabilities using the AI Audit Tool.
-
-3. **contract_generator/**
-   - Explains how to generate, customize, and deploy a smart contract using the Smart Contract Generator.
-
-## How to Run
-
-Navigate to the desired example directory and follow the instructions in its README file.
+fn process_instruction(
+    _program_id: &Pubkey,
+    _accounts: &[AccountInfo],
+    _instruction_data: &[u8],
+) -> ProgramResult {
+    msg!("Hello from AIForge smart contract!");
+    Ok(())
+}
